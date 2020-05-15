@@ -2422,6 +2422,11 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+validation@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/validation/-/validation-0.0.1.tgz#14f684371131ed08a3d190e968637ccd58a36b09"
+  integrity sha1-FPaENxEx7Qij0ZDpaGN8zVijawk=
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
