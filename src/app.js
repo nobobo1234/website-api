@@ -6,6 +6,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const compression = require('compression');
 
+const projectRouter = require('./routes/project');
 const AppError = require('./utils/appError');
 const errorHandler = require('./controllers/error');
 
@@ -38,7 +39,7 @@ app.use(xss());
 // Data compression
 app.use(compression());
 
-// INSERT ROUTES HERE
+app.use('/api/v1/projects', projectRouter);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));

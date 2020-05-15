@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validation = require('validation');
+const validator = require('validator');
 
 const projectSchema = new mongoose.Schema({
     name: {
@@ -17,11 +17,11 @@ const projectSchema = new mongoose.Schema({
     github: {
         type: String,
         required: [true, 'A project must have a github link'],
-        validate: validation.isURL,
+        validate: validator.isURL,
     },
     demo: {
         type: String,
-        validate: validation.isURL,
+        validate: validator.isURL,
     },
     technologies: {
         type: [String],
