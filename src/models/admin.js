@@ -20,7 +20,9 @@ const adminSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please confirm your password'],
         validate: {
-            validator: (el) => el === this.password,
+            validator: function (el) {
+                return el === this.password;
+            },
             message: 'Passwords are not the same',
         },
     },
