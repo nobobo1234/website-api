@@ -15,12 +15,17 @@ process.on('uncaughtException', (err) => {
 
 const DB = process.env.DB.replace('<PASSWORD>', process.env.DB_PASSWORD);
 
-mongoose.connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-});
+mongoose
+    .connect(DB, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log('DB Connection successful!'))
+    .catch(console.log);
+
+mongoose.set('bufferCommands', false);
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {

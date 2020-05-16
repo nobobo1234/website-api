@@ -29,7 +29,7 @@ const projectSchema = new mongoose.Schema({
     },
     screenshot: {
         type: String,
-        default: 'background.jpg',
+        default: 'background.jpeg',
     },
 });
 

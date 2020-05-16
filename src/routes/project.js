@@ -6,13 +6,22 @@ const router = Router();
 router
     .route('/')
     .get(projectController.getAllProjects)
-    .post(projectController.createProject);
+    .post(
+        projectController.uploadScreenshot,
+        projectController.resizeScreenshot,
+        projectController.splitTechnologies,
+        projectController.createProject
+    );
 
 router
     .route('/:id')
     .get(projectController.getProject)
-    .patch(projectController.updateProject)
+    .patch(
+        projectController.uploadScreenshot,
+        projectController.resizeScreenshot,
+        projectController.splitTechnologies,
+        projectController.updateProject
+    )
     .delete(projectController.deleteProject);
-
 
 module.exports = router;
