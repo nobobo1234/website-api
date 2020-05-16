@@ -17,11 +17,11 @@ const projectSchema = new mongoose.Schema({
     github: {
         type: String,
         required: [true, 'A project must have a github link'],
-        validate: validator.isURL,
+        validate: [validator.isURL, 'Please provide a valid URL'],
     },
     demo: {
         type: String,
-        validate: validator.isURL,
+        validate: [validator.isURL, 'Please provide a valid URL'],
     },
     technologies: {
         type: [String],
