@@ -1,2 +1,3 @@
+*.jpeg
 config.env
 node_modules/
